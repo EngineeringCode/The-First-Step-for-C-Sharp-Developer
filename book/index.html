@@ -1,0 +1,92 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>비전공자를 위한 C# 첫걸음</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<style>
+		div, nav{padding:0;margin:0;}
+		#content_list ul{list-style:none;padding-left:20px;}
+		#content_list li{line-height:200%;}
+		#content_list a:hover{cursor:pointer;font-weight:600;;}
+	</style>
+</head>
+<body>
+	<div style="width:1280px;margin:0 auto" />
+		<div id="content_list_wrapper" style="position:absolute;width:300px;left:0;overflow:hidden;">
+			<nav id="content_list" style="overflow-y:auto;overflow-y:overlay;">
+				<ul>
+					<li><a href="#" onclick="getContent('introduction.html')">과정 소개</a></li>
+					<li><a href="#">입문</a>
+						<ul>
+							<li><a href="#">C# 소개</a></li>
+							<li><a href="#">자료형</a></li>
+							<li><a href="#">변수와 상수</a></li>
+							<li><a href="#">배열</a></li>
+							<li><a href="#">문자, 문자배열, 문자열</a></li>
+							<li><a href="#">열거형</a></li>
+							<li><a href="#">연산자</a></li>
+							<li><a href="#">조건문</a></li>
+							<li><a href="#">반복문</a></li>
+						</ul>
+					</li>
+					<li><a href="#">윈도우 폼 어플리케이션</a>
+						<ul>
+							<li><a href="#">Button 컨트롤</a></li>
+							<li><a href="#">CheckBox</a></li>
+							<li><a href="#">CheckedListBox</a></li>
+							<li><a href="#">ComboBox</a></li>
+							<li><a href="#">DataGridView</a></li>
+							<li><a href="#">DateTimePicker</a></li>
+							<li><a href="#">Label</a></li>
+							<li><a href="#">LinkLabel</a></li>
+							<li><a href="#">ListBox</a></li>
+							<li><a href="#">MaskedTextBox</a></li>
+							<li><a href="#">MonthCalendar</a></li>
+							<li><a href="#">NotifyIcon</a></li>
+							<li><a href="#">NumericUpDown</a></li>
+							<li><a href="#">PictureBox</a></li>
+							<li><a href="#">ProgressBar</a></li>
+							<li><a href="#">RadioButton</a></li>
+							<li><a href="#">TextBox</a></li>
+							<li><a href="#">RichTextBox</a></li>
+							<li><a href="#">Tooltip</a></li>
+							<li><a href="#">TreeView</a></li>
+							<li><a href="#">WebBrowser</a></li>
+							<li><a href="#">BackgroundWorker</a></li>
+							<li><a href="#">System Tray 프로그램</a></li>
+							<li><a href="#">드래그-앤-드롭</a></li>
+							<li><a href="#">윈폼 App.Config</a></li>
+							<li><a href="#">차트 컨트롤 기초</a></li>
+							<li><a href="#">차트 컨트롤 데이타</a></li>
+						</ul>
+					</li>
+				</ul>
+			</nav>
+		</div>
+		<div id="content_wrapper" style="position:absolute;width:980px;left:300;overflow:hidden;">
+			<div id="content" style="width:972px;overflow-y:auto;overflow-y:overlay;"></div>
+		</div>
+	</div>
+	<script>
+	$(document).ready(function() {
+		$("body").css('height', window.innerHeight);
+		$("#content_list").css('height', window.innerHeight);
+		$("#content").css('height', window.innerHeight);
+		$.ajax({
+			url : 'introduction.html',
+			success : function(result) {
+				$('#content').html(result);
+			}
+		});
+    });
+	function getContent(fileName){
+		$.ajax({
+			url : fileName,
+			success : function(result) {
+				$('#content').html(result);
+			}
+		});
+	}
+	</script>
+</body>
+</html>
