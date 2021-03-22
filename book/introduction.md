@@ -14,7 +14,7 @@
 
 ![테스트 이미지](images/introduction_test.jpg)
 
-# 라이센스
+# 라이선스
 
 
 
